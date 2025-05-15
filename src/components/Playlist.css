@@ -1,0 +1,12 @@
+.playlist {
+    width: 40%;
+    height: 2.5rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 8px #ddd;
+    border-radius: 5px;
+    margin-top: 1rem;
+    max-height: 300px;
+    border: 1px solid purple;
+}

@@ -1,38 +1,40 @@
 .App {
-  text-align: center;
+  display: block;
+  background-color: #eee;
+  height: 100vh;
+  width: 100vw;
+  border: 1px solid coral;
+  font-size: 1vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.searchBarContainer {
+  width: 80%;
+  margin: 0 auto;
+  justify-items: center;
+  border: 1px solid brown;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.playlistCreationContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  width: 80%;
+  height: 300px;
+  border: 1px solid yellowgreen;
 }
 
-.App-link {
-  color: #61dafb;
+.searchResultsContainer {
+  width: 40%;
+  justify-items: center;
+  border: 1px dashed orange;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.currentPlaylistContainer {
+  width: 40%;
+  justify-items: center;
+  border: 1px dashed teal;
+}
+
+.savedPlaylistsContainer {
+  justify-items: center;
 }
