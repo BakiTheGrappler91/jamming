@@ -1,3 +1,5 @@
 .savedPlaylists {
     border: 1px solid darkolivegreen;
+    height: 40vh;
+    width: 80%;
 }

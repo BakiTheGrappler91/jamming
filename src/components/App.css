@@ -1,11 +1,20 @@
 .App {
   display: block;
-  background-color: #eee;
-  height: 100vh;
-  width: 100vw;
+  background-color: white;
+  width: 100%;
+  height: 100%;
   border: 1px solid coral;
   font-size: 1vh;
+  justify-self: center;
 }
+
+h2 {
+  font-family: 'Trebucher MS', sans-serif;
+  font-size: large;
+  margin-top: 10px;
+}
+
+/* SEARCH BAR  */
 
 .searchBarContainer {
   width: 80%;
@@ -14,26 +23,41 @@
   border: 1px solid brown;
 }
 
+h1 {
+  font-family: 'Trebuchet MS', sans-serif;
+  margin-top: 10px;
+  font-size: xxx-large;
+  font-style: oblique;
+}
+
+/* PLAYLIST CREATION */
+
 .playlistCreationContainer {
   display: flex;
   margin: 0 auto;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 80%;
-  height: 300px;
+  height: 60vh;
   border: 1px solid yellowgreen;
 }
 
+/* SEARCH RESULTS */
+
 .searchResultsContainer {
-  width: 40%;
+  width: 48%;
   justify-items: center;
   border: 1px dashed orange;
 }
 
+/* CURRENT PLAYLIST */
+
 .currentPlaylistContainer {
-  width: 40%;
+  width: 48%;
   justify-items: center;
   border: 1px dashed teal;
 }
+
+/* SAVED PLAYLISTS */
 
 .savedPlaylistsContainer {
   justify-items: center;

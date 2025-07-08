@@ -5,7 +5,7 @@ const Playlist = ({ newPlaylist, handleSubmit, handleRemove }) => {
     const [name, setName] = useState('');
 
     return (
-        <form className='playlist' onSubmit={handleSubmit}>
+        <form className='playlist' onSubmit={(e) => handleSubmit(e, name)}>
             <input 
             name='title'
             placeholder='New playlist'
@@ -13,9 +13,9 @@ const Playlist = ({ newPlaylist, handleSubmit, handleRemove }) => {
             value={name}
             />
             <div>
-                {newPlaylist.map((playlist, index) => (
-                    <div key={index} className="tracks">
-                        {playlist.name}<button onClick={() => handleRemove(playlist)}>-</button>
+                {newPlaylist.map((playlist) => (
+                    <div key={playlist.id} className="tracks">
+                        {playlist.name}<button onClick={() => handleRemove(playlist.id)}>-</button>
                     </div>
                 ))}
             </div>

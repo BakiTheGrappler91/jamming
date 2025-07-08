@@ -1,9 +1,9 @@
 import './App.css';
 import React, { useState } from 'react';
-import SearchBar from './components/SearchBar';
-import SearchResultsList from './components/SearchResultsList'
-import Playlist from './components/Playlist'
-import SavedPlaylists from './components/SavedPlaylists'
+import SearchBar from './SearchBar';
+import SearchResultsList from './SearchResultsList'
+import Playlist from './Playlist'
+import SavedPlaylists from './SavedPlaylists'
 
 // App function component
 function App() {
@@ -16,13 +16,16 @@ function App() {
 
   // Function to add track from the results in the SearchBar to the newPlaylist
   const handleAddTrack = (result) => {
-    setNewPlaylist((prev) => [ ...prev, result ]);
+    setNewPlaylist((prev) => {
+      if (prev.find(track => track.id === result.id)) return prev;
+      return [...prev, result];
+    });
   };
 
   // Function to remove track from the newPlaylist
   const handleRemoveTrack = (trackIdToRemove) => {
     setNewPlaylist((prev) => prev.filter(
-      (result) => result !== trackIdToRemove
+      (result) => result.id !== trackIdToRemove
     ));
   };
   
@@ -30,10 +33,14 @@ function App() {
   const [allPlaylists, setAllPlaylists] = useState([]);
 
   // Function to submit the form for a playlist and saved it to the SavedPlaylists functional component
-  const handleSubmit = (event) => {
+  const handleSubmit = (event, name) => {
     event.preventDefault();
     // if (!newPlaylist.title) return;
-    setAllPlaylists((prev) => [newPlaylist, ...prev]);
+    if (!name || newPlaylist.length === 0) return;
+    const id = Date.now();
+    setAllPlaylists((prev) => [
+      { id, title: name, tracks: newPlaylist }, ...prev]);
+    console.log(allPlaylists);
     setNewPlaylist([]);
   };
 
