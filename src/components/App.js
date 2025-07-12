@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
 import SearchResultsList from './SearchResultsList'
 import Playlist from './Playlist'
@@ -32,15 +32,17 @@ function App() {
   // State for all of the playlist that are created and stored
   const [allPlaylists, setAllPlaylists] = useState([]);
 
+  useEffect(() => {console.log(allPlaylists)}, [allPlaylists]);
+
   // Function to submit the form for a playlist and saved it to the SavedPlaylists functional component
   const handleSubmit = (event, name) => {
     event.preventDefault();
     // if (!newPlaylist.title) return;
     if (!name || newPlaylist.length === 0) return;
+
     const id = Date.now();
     setAllPlaylists((prev) => [
       { id, title: name, tracks: newPlaylist }, ...prev]);
-    console.log(allPlaylists);
     setNewPlaylist([]);
   };
 
